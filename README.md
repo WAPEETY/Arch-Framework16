@@ -86,4 +86,23 @@ and then link the config in the right place with `sudo ln -s /usr/local/etc/illu
 
 after this `sudo systemctl enable illuminanced.service && sudo systemctl start illuminanced.service` and should work.
 
-## TODO: Fingerprint unlock, verify hardware acceleration on firefox, disk unlock with TPM, configure backups for my data and the system
+## 4. Fingerprint unlock
+
+The Framework 16 has a standard fingerprint sensor so just follow [this](https://wiki.archlinux.org/title/Fprint) guide to enroll your fingerprint
+In the installation only `fprintd` and `imagemagick` are needed
+
+- [This thread](https://community.frame.work/t/guide-solved-sudo-and-login-with-fingerprint-reader-under-kde-arch-linux/37009/6) on the framework forum might help you 
+
+### 4.1 Fingerprint unlock on SDDM
+Edit the file `/etc/pam.d/sddm` and add on top under `#%PAM-1.0`
+
+`auth        sufficient  pam_fprintd.so`
+
+## 5. Eduroam Wi-Fi
+Download the python script from:
+https://cat.eduroam.org/#
+
+Run it with `python <scriptname>.py` if you get an error like: _NetworkManager configuration failed_ probably your missing `python-dbus`
+All done... maybe.
+
+## TODO: hardware acceleration on firefox (doesn't work), disk unlock with TPM, configure backups for my data and the system
