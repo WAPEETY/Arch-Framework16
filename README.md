@@ -103,6 +103,20 @@ Download the python script from:
 https://cat.eduroam.org/#
 
 Run it with `python <scriptname>.py` if you get an error like: _NetworkManager configuration failed_ probably your missing `python-dbus`
-All done... maybe.
+All done.
+
+## 6. Zsh, powerlevel10k
+
+Just follow [this guide](https://github.com/romkatv/powerlevel10k?tab=readme-ov-file#installation), i used the arch linux method
+
+### 6.1 Fast forward - Fast backward
+
+This functionality is to use the ctrl + <- (backward) key and the ctrl + -> (forward) key to move the cursor by one one (respectively the previous and the next one) 
+
+Add to .zshrc:
+```
+bindkey ";6C" forward-word
+bindkey ";6D" backward-word
+```
 
 ## TODO: hardware acceleration on firefox (doesn't work), disk unlock with TPM, configure backups for my data and the system
