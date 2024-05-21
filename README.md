@@ -111,4 +111,8 @@ Just follow [this guide](https://github.com/romkatv/powerlevel10k?tab=readme-ov-
 
 **Remember:** change on Konsole the font `Open Settings` → `Edit Current Profile` → `Appearance`, `Select Font` and change to `MesloLGS NF Regular`.
 
+## 7. Keyboard backlight
+Check [this page](https://community.frame.work/t/fw-16-keyboard-backlight/48566) from the forum and also change the permission of your user to access serial port.
+[This link](https://bbs.archlinux.org/viewtopic.php?id=178552) might be useful. Remember to logout before testing :P
+
 ## TODO: hardware acceleration on firefox (doesn't work), disk unlock with TPM, configure backups for my data and the system
