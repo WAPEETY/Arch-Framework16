@@ -112,7 +112,16 @@ Just follow [this guide](https://github.com/romkatv/powerlevel10k?tab=readme-ov-
 **Remember:** change on Konsole the font `Open Settings` → `Edit Current Profile` → `Appearance`, `Select Font` and change to `MesloLGS NF Regular`.
 
 ## 7. Keyboard backlight
-Check [this page](https://community.frame.work/t/fw-16-keyboard-backlight/48566) from the forum and also change the permission of your user to access serial port.
-[This link](https://bbs.archlinux.org/viewtopic.php?id=178552) might be useful. Remember to logout before testing :P
+
+Framework laptop keyboard as we know is divided in modules so this guide is purposely written as the "utlimate solution".
+First of all you'll need a chromium based browser (sadly firefox has decided not to implement this kind of API because they think it's too much risky)
+
+1. open a terminal and change the permission of your HID devices with `sudo chmod 600 /dev/hidraw*` (the * is just because the ID may vary depending your config)
+2. open your chromium based browser and load the page [keyboard.frame.work](https://keyboard.frame.work)
+3. change your settings, save them, etc...
+4. **change back your HID devices permissions** with `sudo chmod 600 /dev/hidraw*`
+
+Useful links:
+- [Arch Wiki](https://bbs.archlinux.org/viewtopic.php?id=285709)
 
 ## TODO: hardware acceleration on firefox (doesn't work), disk unlock with TPM, configure backups for my data and the system
