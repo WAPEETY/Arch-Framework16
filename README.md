@@ -107,16 +107,8 @@ All done.
 
 ## 6. Zsh, powerlevel10k
 
-Just follow [this guide](https://github.com/romkatv/powerlevel10k?tab=readme-ov-file#installation), i used the arch linux method
+Just follow [this guide](https://github.com/romkatv/powerlevel10k?tab=readme-ov-file#installation), i used the oh-my-zsh method
 
-### 6.1 Fast forward - Fast backward
-
-This functionality is to use the ctrl + <- (backward) key and the ctrl + -> (forward) key to move the cursor by one one (respectively the previous and the next one) 
-
-Add to .zshrc:
-```
-bindkey ";6C" forward-word
-bindkey ";6D" backward-word
-```
+**Remember:** change on Konsole the font `Open Settings` → `Edit Current Profile` → `Appearance`, `Select Font` and change to `MesloLGS NF Regular`.
 
 ## TODO: hardware acceleration on firefox (doesn't work), disk unlock with TPM, configure backups for my data and the system
