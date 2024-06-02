@@ -116,7 +116,7 @@ Just follow [this guide](https://github.com/romkatv/powerlevel10k?tab=readme-ov-
 Framework laptop keyboard as we know is divided in modules so this guide is purposely written as the "utlimate solution".
 First of all you'll need a chromium based browser (sadly firefox has decided not to implement this kind of API because they think it's too much risky)
 
-1. open a terminal and change the permission of your HID devices with `sudo chmod 600 /dev/hidraw*` (the * is just because the ID may vary depending your config)
+1. open a terminal and change the permission of your HID devices with `sudo chmod a+rw /dev/hidraw*` (the * is just because the ID may vary depending your config)
 2. open your chromium based browser and load the page [keyboard.frame.work](https://keyboard.frame.work)
 3. change your settings, save them, etc...
 4. **change back your HID devices permissions** with `sudo chmod 600 /dev/hidraw*`
