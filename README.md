@@ -121,6 +121,9 @@ First of all you'll need a chromium based browser (sadly firefox has decided not
 3. change your settings, save them, etc...
 4. **change back your HID devices permissions** with `sudo chmod 600 /dev/hidraw*`
 
+## 8. Fan profiles
+[I use this](https://github.com/TamtamHero/fw-fanctrl)
+
 Useful links:
 - [Arch Wiki](https://bbs.archlinux.org/viewtopic.php?id=285709)
 
