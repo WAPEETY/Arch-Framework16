@@ -113,13 +113,18 @@ Just follow [this guide](https://github.com/romkatv/powerlevel10k?tab=readme-ov-
 
 ## 7. Keyboard backlight
 
-Framework laptop keyboard as we know is divided in modules so this guide is purposely written as the "utlimate solution".
-First of all you'll need a chromium based browser (sadly firefox has decided not to implement this kind of API because they think it's too much risky)
+Framework laptop keyboard as we know is divided in modules and each module is configurable using a copy of the VIA app provided by framework itself at [keyboard.frame.work](https://keyboard.frame.work)
+First of all you'll need a chromium based browser, sadly firefox has decided not to implement this kind of API because they believe it's dangerous (even if things such as camera access and others permissions are "perfectly fine") follow [this discussion](https://connect.mozilla.org/t5/discussions/fully-support-web-usb-and-web-serial/m-p/62) to see more.
 
-1. open a terminal and change the permission of your HID devices with `sudo chmod a+rw /dev/hidraw*` (the * is just because the ID may vary depending your config)
-2. open your chromium based browser and load the page [keyboard.frame.work](https://keyboard.frame.work)
-3. change your settings, save them, etc...
-4. **change back your HID devices permissions** with `sudo chmod 600 /dev/hidraw*`
+To access the devices you need to edit udev rules, by placing [this file](https://github.com/qmk/qmk_firmware/blob/master/util/udev/50-qmk.rules) in `/etc/udev/rules.d/50-qmk.rules`
+
+```
+sudo nano /etc/udev/rules.d/50-qmk.rules
+sudo udevadm control --reload-rules
+sudo udevadm trigger
+```
+
+- [Source](https://docs.qmk.fm/faq_build#linux-udev-rules)
 
 ## 8. Fan profiles
 [I use this](https://github.com/TamtamHero/fw-fanctrl)
