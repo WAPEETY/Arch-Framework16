@@ -98,6 +98,21 @@ Edit the file `/etc/pam.d/sddm` and add on top under `#%PAM-1.0`
 
 `auth        sufficient  pam_fprintd.so`
 
+### 4.2 Fingerprint for sudo auth
+
+I have added the fingerprint as a second-way auth in sudo by adding it under the first rule
+
+`auth            sufficient      pam_fprintd.so` this is the line I've added and this is how my `/etc/pam.d/sudo` file looks now:
+
+```
+#%PAM-1.0
+auth            sufficient      pam_unix.so try_first_pass likeauth nullok
+auth            sufficient      pam_fprintd.so
+auth            include         system-auth
+account         include         system-auth
+session         include         system-auth
+```
+
 ## 5. Eduroam Wi-Fi
 Download the python script from:
 https://cat.eduroam.org/#
@@ -136,6 +151,8 @@ Useful links:
 
 I personally use timeshift with grub-btrfs and timeshift-autosnap:
 
-Follow the [Arch guide](https://wiki.archlinux.org/title/Timeshift), then install [timeshift-autosnap](https://aur.archlinux.org/packages/timeshift-autosnap)
+Follow the [Arch guide](https://wiki.archlinux.org/title/Timeshift)
+then install [timeshift-autosnap](https://aur.archlinux.org/packages/timeshift-autosnap)
+at the end to make sure grub-btrfs works you need to run `sudo grub-mkconfig` the first time, after that you will find all the bootable snapshots in a sub directory in the GRUB menu
 
-## TODO: hardware acceleration on firefox (doesn't work), disk unlock with TPM, configure backups for my data and the system
+## TODO: hardware acceleration on firefox (doesn't work), disk unlock with TPM, configure backups for the system
