@@ -132,4 +132,10 @@ sudo udevadm trigger
 Useful links:
 - [Arch Wiki](https://bbs.archlinux.org/viewtopic.php?id=285709)
 
+## 9. BTRFS Backup
+
+I personally use timeshift with grub-btrfs and timeshift-autosnap:
+
+Follow the [Arch guide](https://wiki.archlinux.org/title/Timeshift), then install [timeshift-autosnap](https://aur.archlinux.org/packages/timeshift-autosnap)
+
 ## TODO: hardware acceleration on firefox (doesn't work), disk unlock with TPM, configure backups for my data and the system
