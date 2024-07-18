@@ -6,6 +6,7 @@ I might change stuff in future so check this repo multiple times :)
 - [Framework Laptop 16 on Arch Wiki](https://wiki.archlinux.org/title/Framework_Laptop_16)
 - [Framework Community](https://community.frame.work/c/framework-laptop-16/136)
 - in specific chapters maybe I'll add more
+
 ## 1. My setup
 ```
 wapeety@purple-dragon
@@ -16,14 +17,6 @@ CPU: AMD Ryzen 7 7840HS w/ Radeon 780M Graphics (16) @ 5.137GHz
 GPU: AMD ATI c4:00.0 Phoenix1
 GPU: AMD ATI Radeon RX 7700S/7600/7600S/7600M XT/PRO W7600
 Memory: 3268MiB / 15175MiB
-```
-
-I have archlinux with encrypted disk and secureboot (I will not make a tutorial on how to do this since there are already enought)
-As of today I couldn't use the TPM to unlock the disk (if you want to help, below you have the error)
-```bash
-[wapeety@purple-dragon ~]$ systemd-cryptenroll /dev/gpt-auto-root-luks --recovery-key
-Device /dev/gpt-auto-root-luks does not exist or access denied.
-Failed to allocate libcryptsetup context: Block device required
 ```
 
 ## 2. Read the F-ing manual
@@ -83,11 +76,9 @@ light_5 = 10
 ```
 
 and then link the config in the right place with `sudo ln -s /usr/local/etc/illuminanced.toml /etc/illuminanced.toml` if `/etc/illuminanced.toml` already exists just delete it.
-
 after this `sudo systemctl enable illuminanced.service && sudo systemctl start illuminanced.service` and should work.
 
 ## 4. Fingerprint unlock
-
 The Framework 16 has a standard fingerprint sensor so just follow [this](https://wiki.archlinux.org/title/Fprint) guide to enroll your fingerprint
 In the installation only `fprintd` and `imagemagick` are needed
 
@@ -121,13 +112,11 @@ Run it with `python <scriptname>.py` if you get an error like: _NetworkManager c
 All done.
 
 ## 6. Zsh, powerlevel10k
-
-Just follow [this guide](https://github.com/romkatv/powerlevel10k?tab=readme-ov-file#installation), i used the oh-my-zsh method
+Just follow [this guide](https://github.com/romkatv/powerlevel10k?tab=readme-ov-file#installation), I used the oh-my-zsh method
 
 **Remember:** change on Konsole the font `Open Settings` → `Edit Current Profile` → `Appearance`, `Select Font` and change to `MesloLGS NF Regular`.
 
 ## 7. Keyboard backlight
-
 Framework laptop keyboard as we know is divided in modules and each module is configurable using a copy of the VIA app provided by framework itself at [keyboard.frame.work](https://keyboard.frame.work)
 First of all you'll need a chromium based browser, sadly firefox has decided not to implement this kind of API because they believe it's dangerous (even if things such as camera access and others permissions are "perfectly fine") follow [this discussion](https://connect.mozilla.org/t5/discussions/fully-support-web-usb-and-web-serial/m-p/62) to see more.
 
@@ -148,11 +137,16 @@ Useful links:
 - [Arch Wiki](https://bbs.archlinux.org/viewtopic.php?id=285709)
 
 ## 9. BTRFS Backup
-
 I personally use timeshift with grub-btrfs and timeshift-autosnap:
 
 Follow the [Arch guide](https://wiki.archlinux.org/title/Timeshift)
 then install [timeshift-autosnap](https://aur.archlinux.org/packages/timeshift-autosnap)
 at the end to make sure grub-btrfs works you need to run `sudo grub-mkconfig` the first time, after that you will find all the bootable snapshots in a sub directory in the GRUB menu
 
-## TODO: hardware acceleration on firefox (doesn't work), disk unlock with TPM, configure backups for the system
+## 10. Offsite data backup
+As of today I have a nextcloud instance so I use the nextcloud-client to backup some folders in the system to my server. Since this is a public repo I'll not include any further info but remember to add to excluded files:
+`node_modules`
+`__pycache__`
+`.env`
+
+## TODO: hardware acceleration on firefox (doesn't work), disk unlock with TPM
