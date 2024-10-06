@@ -149,4 +149,7 @@ As of today I have a nextcloud instance so I use the nextcloud-client to backup 
 `__pycache__`
 `.env`
 
+## 11. Grub theme
+Literally follow the guide from [the repo](https://github.com/HeinrichZurHorstMeyer/Framework-Grub-Theme)
+
 ## TODO: hardware acceleration on firefox (doesn't work), disk unlock with TPM
