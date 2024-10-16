@@ -85,6 +85,10 @@ In the installation only `fprintd` and `imagemagick` are needed
 - [This thread](https://community.frame.work/t/guide-solved-sudo-and-login-with-fingerprint-reader-under-kde-arch-linux/37009/6) on the framework forum might help you 
 
 ### 4.1 Fingerprint unlock on SDDM
+
+> [!WARNING] 
+> **ADDING THIS WILL RESULT IN 30s login each time** no idea how to fix for now.
+
 Edit the file `/etc/pam.d/sddm` and add on top under `#%PAM-1.0`
 
 `auth        sufficient  pam_fprintd.so`
