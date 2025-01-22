@@ -20,7 +20,7 @@ Memory: 3268MiB / 15175MiB
 ```
 
 ## 2. Read the F-ing manual
-Remember to configure the regulatory domain, more info [here](https://wiki.archlinux.org/title/Framework_Laptop_16#WiFi_performance_on_AMD_edition)
+Remember to configure the regulatory domain, more info on the [Arch Wiki](https://wiki.archlinux.org/title/Framework_Laptop_16#WiFi_performance_on_AMD_edition)
 
 ## 3. Ambient light sensor
 I used [illuminanced-git<sup>AUR</sup>](https://aur.archlinux.org/packages/illuminanced-git/).
@@ -143,7 +143,7 @@ Useful links:
 ## 9. BTRFS Backup
 I personally use timeshift with grub-btrfs and timeshift-autosnap:
 
-Follow the [Arch guide](https://wiki.archlinux.org/title/Timeshift)
+Follow the [Arch Wiki](https://wiki.archlinux.org/title/Timeshift)
 then install [timeshift-autosnap](https://aur.archlinux.org/packages/timeshift-autosnap)
 at the end to make sure grub-btrfs works you need to run `sudo grub-mkconfig` the first time, after that you will find all the bootable snapshots in a sub directory in the GRUB menu
 
@@ -156,4 +156,15 @@ As of today I have a nextcloud instance so I use the nextcloud-client to backup 
 ## 11. Grub theme
 Literally follow the guide from [the repo](https://github.com/HeinrichZurHorstMeyer/Framework-Grub-Theme)
 
-## TODO: hardware acceleration on firefox (doesn't work), disk unlock with TPM
+## 12. Firefox Hardware Acceleration
+Sooo after a loong time I've figured out also this... since it took vary attempts I don't know if this solution is complete, anyway...
+
+First of all install `va-api` for amd GPUs, then... nothing works
+So rage-reading the [Arch Wiki](https://wiki.archlinux.org/title/Firefox#Hardware_video_acceleration) i found this three flag to set in `about:config`:
+- `gfx.webrender.all`
+- `media.ffmpeg.vaapi.enable`
+- `media.hardware-video-decoding.force-enabled=true`
+
+and now seems to work.
+
+## TODO: disk unlock with TPM
