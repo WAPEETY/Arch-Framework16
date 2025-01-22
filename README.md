@@ -163,7 +163,7 @@ First of all install `va-api` for amd GPUs, then... nothing works
 So rage-reading the [Arch Wiki](https://wiki.archlinux.org/title/Firefox#Hardware_video_acceleration) i found this three flag to set in `about:config`:
 - `gfx.webrender.all` to true
 - `media.ffmpeg.vaapi.enable` to true
-- `media.hardware-video-decoding.force-enabled` = true
+- `media.hardware-video-decoding.force-enabled` to true
 
 and now seems to work.
 
