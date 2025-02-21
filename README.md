@@ -144,7 +144,7 @@ Useful links:
 I personally use timeshift with grub-btrfs and timeshift-autosnap:
 
 Follow the [Arch Wiki](https://wiki.archlinux.org/title/Timeshift)
-then install [timeshift-autosnap](https://aur.archlinux.org/packages/timeshift-autosnap)
+then install [timeshift-autosnap<sup>AUR</sup>](https://aur.archlinux.org/packages/timeshift-autosnap)
 at the end to make sure grub-btrfs works you need to run `sudo grub-mkconfig` the first time, after that you will find all the bootable snapshots in a sub directory in the GRUB menu
 
 ## 10. Offsite data backup
