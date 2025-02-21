@@ -167,4 +167,8 @@ So rage-reading the [Arch Wiki](https://wiki.archlinux.org/title/Firefox#Hardwar
 
 and now seems to work.
 
+## 13. Power profiles
+
+[https://bbs.archlinux.org/viewtopic.php?id=292026](https://bbs.archlinux.org/viewtopic.php?id=292026)
+
 ## TODO: disk unlock with TPM
