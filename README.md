@@ -108,6 +108,21 @@ account         include         system-auth
 session         include         system-auth
 ```
 
+### 4.3 Fingerprint for Polkit
+
+Copy `/usr/lib/pam.d/polkit-1` file content to `/etc/pam.d/polkit-1` and then edit the second file.
+
+Add `auth       sufficient   pam_fprintd.so` to `et/pam.d/polkit-1`:
+Now your file should look like this:
+```
+#%PAM-1.0
+auth       sufficient   pam_fprintd.so
+auth       include      system-auth
+account    include      system-auth
+password   include      system-auth
+session    include      system-auth
+```
+
 ## 5. Eduroam Wi-Fi
 Download the python script from:
 https://cat.eduroam.org/#
